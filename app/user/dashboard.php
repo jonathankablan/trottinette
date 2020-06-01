@@ -5,6 +5,8 @@
             <h1 class="h2">Tableau de bord</h1>
           </div>
 
+          <?php include_once '../../composants/user/flashMessage.php'; ?>
+
           <h2>Section title</h2>
           <div class="table-responsive">
             <table class="table table-striped table-sm">
