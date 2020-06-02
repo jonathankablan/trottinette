@@ -155,8 +155,6 @@
 
           <?php include_once '../../composants/user/flashMessage.php'; ?>
 
-          <h2>Trottinette</h2>
-
           <div class="table-responsive">
             <table class="table table-sm">
               <thead class="table table-dark table-sm">
