@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1
--- Généré le :  lun. 01 juin 2020 à 22:40
+-- Généré le :  mar. 02 juin 2020 à 02:42
 -- Version du serveur :  10.1.38-MariaDB
 -- Version de PHP :  7.3.2
 
@@ -39,6 +39,13 @@ CREATE TABLE `geolocalisation` (
   `created_at` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+--
+-- Déchargement des données de la table `geolocalisation`
+--
+
+INSERT INTO `geolocalisation` (`id`, `id_trottinette`, `latitude`, `longitude`, `city`, `country`, `code_postal`, `created_at`) VALUES
+(1, 2, 3, 6, 'Paris', 'France', '75015', '2020-06-02 02:05:28');
+
 -- --------------------------------------------------------
 
 --
@@ -48,12 +55,19 @@ CREATE TABLE `geolocalisation` (
 CREATE TABLE `maintenance` (
   `id` int(11) NOT NULL,
   `id_trottinette` int(11) NOT NULL,
-  `pression_pneus` longtext,
-  `roues` longtext,
-  `freins` longtext,
-  `remplacement` longtext,
+  `pression_pneus` varchar(255) DEFAULT NULL,
+  `roues` varchar(255) DEFAULT NULL,
+  `freins` varchar(255) DEFAULT NULL,
+  `remplacement` varchar(255) DEFAULT NULL,
   `created_at` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Déchargement des données de la table `maintenance`
+--
+
+INSERT INTO `maintenance` (`id`, `id_trottinette`, `pression_pneus`, `roues`, `freins`, `remplacement`, `created_at`) VALUES
+(1, 2, 'Effectue', 'Correcte', 'Fonctionne', 'Remplacement pneu avant', '2020-06-02 02:07:22');
 
 -- --------------------------------------------------------
 
@@ -67,6 +81,13 @@ CREATE TABLE `reservation` (
   `id_user` int(11) NOT NULL,
   `date_reservation` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Déchargement des données de la table `reservation`
+--
+
+INSERT INTO `reservation` (`id`, `id_trottinette`, `id_user`, `date_reservation`) VALUES
+(1, 2, 2, '2020-06-02 00:00:00');
 
 -- --------------------------------------------------------
 
@@ -168,19 +189,19 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT pour la table `geolocalisation`
 --
 ALTER TABLE `geolocalisation`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT pour la table `maintenance`
 --
 ALTER TABLE `maintenance`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT pour la table `reservation`
 --
 ALTER TABLE `reservation`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT pour la table `trottinette`

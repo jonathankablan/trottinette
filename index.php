@@ -4,7 +4,7 @@
     <main role="main">
       <section class="jumbotron text-center">
         <div class="container">
-          <h1>Trottinette Disponible</h1>
+          <h1>Trottinette</h1>
         </div>
       </section>
 

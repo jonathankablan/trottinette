@@ -1,5 +1,11 @@
 <?php include_once '../../functions/database.php'; ?>
 <?php include_once '../../functions/parameter.php'; ?>
+<?php  
+if ($_SESSION['id'] == null) {
+  header('Location: ../../login.php');
+}
+
+?>
 
 <!doctype html>
 <html lang="en">
@@ -77,6 +83,18 @@
                 <a class="nav-link" href="reservation.php">
                   <i class="fa fa-calendar"></i>
                   Reservation
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="geolocalisation.php">
+                  <i class="fa fa-map"></i>
+                  Geolocalisation
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="maintenance.php">
+                  <i class="fa fa-recycle"></i>
+                  Maintenance
                 </a>
               </li>
             </ul>
